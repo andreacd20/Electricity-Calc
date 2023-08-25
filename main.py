@@ -1,5 +1,5 @@
 # Impor
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -15,6 +15,7 @@ def result_calculate(size, lights, device):
 @app.route('/')
 def index():
     return render_template('index.html')
+
 # Halaman kedua
 @app.route('/<size>')
 def lights(size):
@@ -27,7 +28,7 @@ def lights(size):
 @app.route('/<size>/<lights>')
 def electronics(size, lights):
     return render_template(
-                            'electronics.html',                           
+                            'electronics.html',
                             size = size, 
                             lights = lights                           
                            )
@@ -41,21 +42,4 @@ def end(size, lights, device):
                                                     int(device)
                                                     )
                         )
-# Formulir
-@app.route('/form')
-def form():
-    return render_template('form.html')
-
-#Hasil formulir
-@app.route('/submit', methods=['POST'])
-def submit_form():
-    # Mendeklarasikan variabel untuk pengumpulan data
-    name = request.form['name']
-
-    # Anda dapat menyimpan data Anda atau mengirimkannya melalui email
-    return render_template('form_result.html', 
-                           # Tempatkan variabel di sini
-                           name=name,
-                           )
-
 app.run(debug=True)
