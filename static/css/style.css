@@ -171,3 +171,24 @@ label {
     font: inherit;
     color: #fff;
 }
+
+.form__ {
+    background-color: #CAE49D;
+}
+
+.form__h1 {
+    font-size: 26px;
+    font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration: underline;
+    background-color: #E8E6C2;
+    margin-top: 20px;
+    color: #2C4555;
+}
+
+.form__p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+}
